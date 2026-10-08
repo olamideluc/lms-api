@@ -1,0 +1,79 @@
+### Get all users
+GET http://localhost:3000/users
+
+###
+
+### Get user by ID
+GET http://localhost:3000/users/6ac689cf227358b38ba2b2e0
+
+###
+
+### Create user
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "firstName": "Emily",
+    "lastName": "Davis",
+    "email": "emily@example.com",
+    "role": "Student",
+    "phoneNumber": "555-9999",
+    "dateJoined": "2026-10-04",
+    "status": "Active"
+}
+
+###
+
+### Update user
+PUT http://localhost:3000/users/6ac689cf227358b38ba2b2e0
+Content-Type: application/json
+
+{
+    "firstName": "Emily",
+    "lastName": "Davis",
+    "email": "emily.updated@example.com",
+    "role": "Student",
+    "phoneNumber": "555-9999",
+    "dateJoined": "2026-10-04",
+    "status": "Active"
+    
+}
+
+###
+
+### Delete user
+DELETE http://localhost:3000/users/6ac689cf227358b38ba2b2e0
+
+### Get all courses
+GET http://localhost:3000/courses
+
+###
+
+### Create course
+POST http://localhost:3000/courses
+Content-Type: application/json
+
+{
+    "courseCode": "CSE450",
+    "courseName": "Advanced Backend Development",
+    "credits": 4,
+    "instructor": "Dr. Taylor"
+}
+
+###
+
+### Update course
+PUT http://localhost:3000/courses/6ac68fd2a1e26add574c7397
+Content-Type: application/json
+
+{
+    "courseCode": "CSE450",
+    "courseName": "Advanced Backend Development",
+    "credits": 5,
+    "instructor": "Professor Taylor"
+}
+
+###
+
+### Delete course
+DELETE http://localhost:3000/courses/6ac68fd2a1e26add574c7397
