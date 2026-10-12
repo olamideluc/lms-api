@@ -67,7 +67,7 @@ PUT http://localhost:3000/courses/6ac68fd2a1e26add574c7397
 Content-Type: application/json
 
 {
-    "courseCode": "CSE450",
+    "courseCode": "CSE342",
     "courseName": "Advanced Backend Development",
     "credits": 5,
     "instructor": "Professor Taylor"
@@ -77,3 +77,81 @@ Content-Type: application/json
 
 ### Delete course
 DELETE http://localhost:3000/courses/6ac68fd2a1e26add574c7397
+
+### Get all assignments
+GET http://localhost:3000/assignments
+
+###
+
+### Get assignment by ID
+GET http://localhost:3000/assignments/PASTE_ASSIGNMENT_ID_HERE
+
+###
+
+### Create assignment
+POST http://localhost:3000/assignments
+Content-Type: application/json
+
+{
+    "title": "API Security",
+    "description": "Implement OAuth",
+    "dueDate": "2026-12-15",
+    "courseId": "CSE341"
+}
+
+###
+
+### Update assignment
+PUT http://localhost:3000/assignments/6acae34de1584baa24c75f6c
+Content-Type: application/json
+
+{
+    "title": "API Security Updated",
+    "description": "Implement OAuth and Unit Testing",
+    "dueDate": "2026-12-20",
+    "courseId": "CSE341"
+}
+
+###
+
+### Delete assignment
+DELETE http://localhost:3000/assignments/6acae34de1584baa24c75f6c
+
+### Get all enrollments
+GET http://localhost:3000/enrollments
+
+###
+
+### Get enrollment by ID
+GET http://localhost:3000/enrollments/6acad7aba549bd2d5b8dbc80
+
+###
+
+### Create enrollment
+POST http://localhost:3000/enrollments
+Content-Type: application/json
+
+{
+    "studentId": "99999",
+    "courseId": "CSE450",
+    "enrollmentDate": "2026-12-01",
+    "status": "Active"
+}
+
+###
+
+### Update enrollment
+PUT http://localhost:3000/enrollments/6acae5976a0f48725137bd43
+Content-Type: application/json
+
+{
+    "studentId": "99999",
+    "courseId": "CSE450",
+    "enrollmentDate": "2026-12-10",
+    "status": "Completed"
+}
+
+###
+
+### Delete enrollment
+DELETE http://localhost:3000/enrollments/6acae5976a0f48725137bd43

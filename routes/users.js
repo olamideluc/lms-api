@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const usersController = require('../controllers/users');
 const validation = require('../middleware/validate');
+const auth = require('../middleware/auth');
 
 
 router.get('/', usersController.getAllUsers); // #swagger.tags = ['Users']
@@ -10,6 +11,7 @@ router.get('/:id', usersController.getSingleUser); // #swagger.tags = ['Users']
 // #swagger.tags = ['Users']
 router.post(
     '/',
+    auth.isAuthenticated,
     validation.userValidationRules,
     usersController.createUser
 );
@@ -17,6 +19,7 @@ router.post(
 // #swagger.tags = ['Users']
 router.put(
     '/:id',
+    auth.isAuthenticated,
     validation.userValidationRules,
     usersController.updateUser
 );

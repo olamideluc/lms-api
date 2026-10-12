@@ -41,7 +41,47 @@ const courseValidationRules = (req, res, next) => {
     next();
 };
 
+const assignmentValidationRules = (req, res, next) => {
+    const schema = Joi.object({
+        title: Joi.string().required(),
+        description: Joi.string().required(),
+        dueDate: Joi.string().required(),
+        courseId: Joi.string().required()
+    });
+
+    const { error } = schema.validate(req.body);
+
+    if (error) {
+        return res.status(400).json({
+            message: error.details[0].message
+        });
+    }
+
+    next();
+};
+
+const enrollmentValidationRules = (req, res, next) => {
+    const schema = Joi.object({
+        studentId: Joi.string().required(),
+        courseId: Joi.string().required(),
+        enrollmentDate: Joi.string().required(),
+        status: Joi.string().required()
+    });
+
+    const { error } = schema.validate(req.body);
+
+    if (error) {
+        return res.status(400).json({
+            message: error.details[0].message
+        });
+    }
+
+    next();
+};
+
 module.exports = {
     userValidationRules,
-    courseValidationRules
+    courseValidationRules,
+    assignmentValidationRules,
+    enrollmentValidationRules
 };
