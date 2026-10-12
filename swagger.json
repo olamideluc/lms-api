@@ -5,10 +5,10 @@
     "description": "LMS API for managing users and courses",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "lms-api-6i1h.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/": {
